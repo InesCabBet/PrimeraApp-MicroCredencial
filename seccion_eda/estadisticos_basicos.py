@@ -46,4 +46,12 @@ with cols_target:
     st.pyplot(fig)
 
 st.markdown("## Matriz de correlación")
+cols_interes = ['temp', 'hum', 'windspeed', 'casual', 'cnt']
+matriz_correlacion = df[cols_interes].corr()
 
+col, = st.columns(1)
+with col:
+    fig, ax = plt.subplots()
+    sns.heatmap(matriz_correlacion, annot=True)
+    plt.title("Matriz correlación")
+    st.pyplot(fig)
