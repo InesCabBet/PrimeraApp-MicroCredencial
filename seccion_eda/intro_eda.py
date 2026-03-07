@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Mi Proyecto Final sobre Bike Demand")
+st.title("Primeros Pasos para el EDA del alquilers bicis")
 
 st.markdown("""
 # Modelado de patrón de alquiler de bicis en ciudad Z
