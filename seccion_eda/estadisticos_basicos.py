@@ -6,7 +6,7 @@ import seaborn as sns
 df = pd.read_csv("bike_dataset_hour.csv")
 
 st.markdown("## Datos Crudos del dataset")
-st.dataframe(df.head(500))
+st.dataframe(df.head(100))
 
 st.markdown("## Datos sobre el dataset")
 st.dataframe(df.describe().T)
@@ -15,6 +15,25 @@ st.markdown("## Estadísticos Básicos")
 st.dataframe(df[['dteday', 'temp', 'windspeed', 'hum','cnt']].describe().T[['count', 'std', 'mean']])
 
 st.markdown("## Distribución de las variables")
+cols = st.columns(3)
+
+with cols[0]:
+    fig, ax = plt.subplots()
+    sns.histplot(df['temp'], kde=True)
+    plt.title("Distribución de Temperaturas")
+    st.pyplot(fig)
+
+with cols[1]:
+    fig, ax = plt.subplots()
+    sns.histplot(df['hum'], kde=True)
+    plt.title("Distribución de Humedad")
+    st.pyplot(fig)
+
+with cols[2]:
+    fig, ax = plt.subplots()
+    sns.histplot(df['windspeed'], kde=True)
+    plt.title("Distribución de Velocidad del Viento")
+    st.pyplot(fig)
 
 st.markdown("## Matriz de correlación")
 
