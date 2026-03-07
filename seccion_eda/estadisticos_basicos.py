@@ -35,5 +35,15 @@ with cols[2]:
     plt.title("Distribución de Velocidad del Viento")
     st.pyplot(fig)
 
+st.markdown("---")
+
+cols_target, = st.columns(1)
+
+with cols_target:
+    fig, ax = plt.subplots()
+    sns.histplot(df['cnt'], kde=True)
+    plt.title('Distribucion de ventas')
+    st.pyplot(fig)
+
 st.markdown("## Matriz de correlación")
 
